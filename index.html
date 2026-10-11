@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#152d4d">
+<title>卡轩童鞋批发订货</title>
+<style>
+:root{--navy:#152d4d;--blue:#2457a7;--bg:#f4f6fa;--ink:#172033;--muted:#697386;--line:#e5e9f0;--green:#137a53}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC",sans-serif}
+button,input,select,textarea{font:inherit} button{cursor:pointer}
+header{background:linear-gradient(135deg,#152d4d,#275a91);color:white;padding:20px 17px 17px;border-radius:0 0 22px 22px}
+.brand{font-size:12px;letter-spacing:1.5px;opacity:.8}.headrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:7px}.headrow h1{font-size:22px;margin:0}.tag{font-size:11px;border:1px solid #ffffff66;border-radius:20px;padding:6px 9px;white-space:nowrap}
+header p{font-size:13px;line-height:1.55;color:#e1eaf5;margin:8px 0 0}
+main{max-width:760px;margin:auto;padding:14px 13px 100px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}.stat{background:white;border:1px solid var(--line);border-radius:13px;padding:11px 9px}.stat b{display:block;font-size:16px;color:var(--navy)}.stat span{font-size:11px;color:var(--muted)}
+.toolbar{display:flex;gap:8px;margin-bottom:12px}.search{flex:1;min-width:0;background:white;border:1px solid var(--line);border-radius:11px;padding:11px 12px;outline:none}.smallbtn{border:1px solid var(--line);background:white;border-radius:11px;padding:10px 12px;color:var(--navy);font-weight:600}
+.tabs{display:flex;gap:7px;overflow:auto;padding-bottom:11px}.tab{border:1px solid var(--line);background:white;color:#5a6475;border-radius:20px;padding:8px 13px;white-space:nowrap;font-size:13px}.tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:5px 1px 10px}.sectionhead h2{font-size:17px;margin:0}.sectionhead span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;min-width:0}.photo{height:128px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#edf2f8,#dce6f2);position:relative;font-size:52px}.photo.sand{background:linear-gradient(145deg,#fff0dc,#f3d8b7)}.photo.sport{background:linear-gradient(145deg,#e9eefc,#cdd8f7)}.photo.beach{background:linear-gradient(145deg,#dff5f1,#b9e5df)}.sku{position:absolute;left:8px;top:8px;background:#ffffffdc;border-radius:6px;padding:4px 6px;font-size:10px;color:#37445a}.pbody{padding:10px}.pname{font-weight:700;font-size:14px;line-height:1.35}.pmeta{font-size:11px;color:var(--muted);margin-top:5px}.price{margin-top:8px;display:flex;align-items:baseline;gap:4px}.price b{font-size:19px;color:#b54b20}.price span{font-size:10px;color:var(--muted)}.stock{font-size:11px;color:var(--green);margin-top:4px}.add{width:100%;border:0;background:var(--navy);color:white;border-radius:9px;padding:10px;margin-top:10px;font-size:13px;font-weight:650}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:#fffffff2;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:flex;justify-content:center;z-index:10}.navinner{width:100%;max-width:740px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.navbtn{background:transparent;border:0;color:#6a7485;font-size:12px;padding:5px}.navbtn strong{display:block;font-size:20px;font-weight:500;margin-bottom:2px}.navbtn.active{color:var(--blue)}.count{display:inline-flex;background:#d34d3d;color:white;border-radius:20px;min-width:18px;height:18px;align-items:center;justify-content:center;font-size:10px;vertical-align:top;margin-left:2px}
+.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:14px;margin-bottom:12px}.panel h3{font-size:16px;margin:0 0 12px}.empty{text-align:center;color:var(--muted);padding:35px 10px}.cartrow{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}.cartrow:last-child{border-bottom:0}.cartname{font-size:14px;font-weight:650}.cartdetail{font-size:12px;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:9px;margin-top:8px}.qty button{width:28px;height:28px;border:1px solid var(--line);background:#f7f8fb;border-radius:8px}.qty span{font-size:13px;min-width:22px;text-align:center}.field{display:block;font-size:12px;color:#566174;margin:11px 0 5px}.input{width:100%;border:1px solid #dbe1eb;border-radius:10px;padding:11px;background:white;outline:none}.primary{width:100%;border:0;background:var(--blue);color:white;border-radius:11px;padding:13px;font-weight:700;margin-top:12px}.secondary{width:100%;border:1px solid var(--line);background:white;color:var(--navy);border-radius:11px;padding:12px;font-weight:650;margin-top:8px}.total{display:flex;justify-content:space-between;align-items:center;font-weight:700;padding-top:13px}.total strong{font-size:21px;color:#b54b20}.hint{font-size:12px;line-height:1.55;color:var(--muted)}.notice{background:#fff8e9;border:1px solid #f3dfb2;border-radius:11px;padding:10px;font-size:12px;line-height:1.55;color:#785522;margin-bottom:12px}
+.adminrow{display:grid;grid-template-columns:1fr 1fr;gap:9px}.adminrow .full{grid-column:1/-1}.danger{color:#a3332b;border-color:#efcecb}.hidden{display:none!important}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{height:150px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">KAXUAN · WHOLESALE</div>
+  <div class="headrow"><h1>卡轩童鞋批发订货</h1><span class="tag">现货批发</span></div>
+  <p>Ready stock · Wholesale only<br>浏览款式、选择数量、生成订货单。价格和库存请以最终确认为准。</p>
+</header>
+<main>
+  <section id="catalogView">
+    <div class="stats"><div class="stat"><b id="productCount">6</b><span>展示款式 / Styles</span></div><div class="stat"><b>26–37</b><span>常见尺码范围 / Sizes</span></div><div class="stat"><b>现货</b><span>Ready stock*</span></div></div>
+    <div class="toolbar"><input class="search" id="search" placeholder="搜索款号或鞋款 / Search"><button class="smallbtn" id="manageBtn">管理</button></div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="全部">全部</button><button class="tab" data-cat="运动鞋">运动鞋</button><button class="tab" data-cat="凉鞋">凉鞋</button><button class="tab" data-cat="沙滩鞋">沙滩鞋</button><button class="tab" data-cat="其他">其他</button>
+    </div>
+    <div class="sectionhead"><h2>现货款式 / Products</h2><span id="resultCount">6 款</span></div>
+    <div class="grid" id="products"></div>
+    <p class="hint" style="margin:13px 2px">* 演示商品、价格和库存为示例数据，请在“管理”中替换为你的真实款号、图片和报价。订单提交后不会自动发给仓库，需由你确认。</p>
+  </section>
+  <section id="cartView" class="hidden">
+    <div class="sectionhead"><h2>我的订货单 / Order</h2><span id="cartCount">0 双</span></div>
+    <div class="notice">请填写真实联系信息。此版本在当前浏览器本地保存数据；更换手机或清理浏览器数据可能导致记录丢失。</div>
+    <div class="panel"><div id="cartItems"></div><div class="total"><span>商品金额（参考）</span><strong id="total">¥0.00</strong></div><p class="hint">运费、包装费、最终库存及付款方式需与你确认后确定。</p></div>
+    <div class="panel">
+      <h3>客户信息 / Buyer details</h3>
+      <label class="field">姓名或公司 / Name or Company *</label><input class="input" id="buyer" placeholder="输入客户姓名或公司名">
+      <label class="field">国家 / Country *</label><input class="input" id="country" placeholder="例如：Uganda">
+      <label class="field">WhatsApp / 联系方式 *</label><input class="input" id="contact" placeholder="+国家区号 ...">
+      <label class="field">尺码、颜色或包装要求 / Notes</label><textarea class="input" id="notes" rows="3" placeholder="例如：混色、尺码要求、包装方式"></textarea>
+      <button class="primary" id="makeOrder">生成订货单</button>
+      <button class="secondary" id="copyOrder">复制订货单文字</button>
+      <div id="orderResult" class="hidden"></div>
+    </div>
+  </section>
+  <section id="adminView" class="hidden">
+    <div class="sectionhead"><h2>商品管理 / Products</h2><span>本机保存</span></div>
+    <div class="notice">这里可修改演示商品、添加你的真实款式。当前版本支持填写图片网址；要让国外客户稳定访问并跨设备同步，需要下一步部署在线网站和数据库。</div>
+    <div class="panel">
+      <h3 id="formTitle">添加新款 / Add product</h3>
+      <input id="editId" type="hidden">
+      <label class="field">款号 / SKU *</label><input class="input" id="sku" placeholder="例如 KX-001">
+      <label class="field">名称 / Product name *</label><input class="input" id="pname" placeholder="例如 Kids sports shoes">
+      <div class="adminrow">
+        <div><label class="field">分类</label><select class="input" id="pcat"><option>运动鞋</option><option>凉鞋</option><option>沙滩鞋</option><option>其他</option></select></div>
+        <div><label class="field">批发单价（元）</label><input class="input" id="price" type="number" min="0" step="0.1" value="18.5"></div>
+        <div><label class="field">可供数量（双）</label><input class="input" id="stock" type="number" min="0" step="1" value="100"></div>
+        <div><label class="field">起订量（双）</label><input class="input" id="moq" type="number" min="1" step="1" value="100"></div>
+      </div>
+      <label class="field">尺码范围 / Sizes</label><input class="input" id="sizes" value="26-37">
+      <label class="field">图片网址（可选）</label><input class="input" id="imageUrl" placeholder="https://...">
+      <button class="primary" id="saveProduct">保存商品</button><button class="secondary" id="cancelEdit">取消编辑</button>
+    </div>
+    <div class="panel"><h3>现有商品</h3><div id="adminProducts"></div></div>
+    <div class="panel"><h3>数据备份</h3><p class="hint">可导出商品和本机订单数据，建议定期备份。</p><button class="secondary" id="exportData">导出数据 JSON</button><label class="field">导入之前导出的 JSON 文件</label><input class="input" id="importFile" type="file" accept=".json,application/json"><button class="secondary danger" id="resetDemo">恢复演示商品</button></div>
+  </section>
+  <section id="ordersView" class="hidden">
+    <div class="sectionhead"><h2>本机订单记录 / Orders</h2><span id="orderCount">0 单</span></div>
+    <div class="notice">订单只保存在这台手机的当前浏览器中，不会自动通知你或客户。正式多人使用版需要在线后台。</div>
+    <div id="ordersList"></div>
+  </section>
+</main>
+<div class="bottomnav"><div class="navinner">
+  <button class="navbtn active" data-view="catalogView"><strong>⌂</strong>选款</button>
+  <button class="navbtn" data-view="cartView"><strong>▤ <i class="count" id="navCount">0</i></strong>订货单</button>
+  <button class="navbtn" data-view="ordersView"><strong>◷</strong>订单记录</button>
+</div></div>
+<script>
+const demoProducts=[
+{id:1,sku:"KX-1001",name:"儿童运动鞋 / Kids Sneakers",cat:"运动鞋",price:18.5,stock:1200,moq:100,sizes:"26-37",emoji:"👟",tone:"sport",imageUrl:""},
+{id:2,sku:"KX-1002",name:"儿童休闲鞋 / Casual Shoes",cat:"运动鞋",price:17.5,stock:850,moq:100,sizes:"26-37",emoji:"👟",tone:"",imageUrl:""},
+{id:3,sku:"KX-2001",name:"儿童凉鞋 / Kids Sandals",cat:"凉鞋",price:13.5,stock:700,moq:100,sizes:"26-37",emoji:"🩴",tone:"sand",imageUrl:""},
+{id:4,sku:"KX-3001",name:"儿童沙滩鞋 / Beach Shoes",cat:"沙滩鞋",price:12.5,stock:1600,moq:100,sizes:"26-37",emoji:"🩴",tone:"beach",imageUrl:""},
+{id:5,sku:"KX-1003",name:"儿童网鞋 / Mesh Shoes",cat:"运动鞋",price:16.5,stock:500,moq:100,sizes:"26-37",emoji:"👟",tone:"sport",imageUrl:""},
+{id:6,sku:"KX-4001",name:"儿童拖鞋 / Kids Slippers",cat:"其他",price:9.5,stock:950,moq:100,sizes:"26-37",emoji:"🩴",tone:"sand",imageUrl:""}
+];
+const $=id=>document.getElementById(id);
+let products=load("kx_products",demoProducts),cart=load("kx_cart",{}),orders=load("kx_orders",[]),category="全部",currentView="catalogView";
+function load(k,fallback){try{const v=localStorage.getItem(k);return v?JSON.parse(v):JSON.parse(JSON.stringify(fallback))}catch(e){return JSON.parse(JSON.stringify(fallback))}}
+function save(){try{localStorage.setItem("kx_products",JSON.stringify(products));localStorage.setItem("kx_cart",JSON.stringify(cart));localStorage.setItem("kx_orders",JSON.stringify(orders))}catch(e){}}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(n){return "¥"+Number(n||0).toFixed(2)}
+function countPairs(){return Object.values(cart).reduce((a,b)=>a+Number(b),0)}
+function renderProducts(){
+ const q=$("search").value.trim().toLowerCase();
+ const list=products.filter(p=>(category==="全部"||p.cat===category)&&(!q||(p.sku+" "+p.name+" "+p.cat).toLowerCase().includes(q)));
+ $("productCount").textContent=products.length;$("resultCount").textContent=list.length+" 款";
+ $("products").innerHTML=list.map(p=>`<article class="product"><div class="photo ${esc(p.tone||"")}">${p.imageUrl?`<img src="${esc(p.imageUrl)}" alt="${esc(p.name)}" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">`:''}<span>${p.imageUrl?'':esc(p.emoji||"👟")}</span><span class="sku">${esc(p.sku)}</span></div><div class="pbody"><div class="pname">${esc(p.name)}</div><div class="pmeta">${esc(p.cat)} · 尺码 ${esc(p.sizes||"按需确认")}</div><div class="price"><b>${money(p.price)}</b><span>/ 双</span></div><div class="stock">参考库存 ${Number(p.stock||0).toLocaleString()} 双 · MOQ ${p.moq||1}</div><button class="add" onclick="addToCart(${p.id})">${cart[p.id]?"继续加数量":"加入订货单"}${cart[p.id]?` (${cart[p.id]})`:''}</button></div></article>`).join("")||'<div class="empty" style="grid-column:1/-1">没有找到商品 / No products found</div>';
+ updateCartBadge();
+}
+function addToCart(id){const p=products.find(x=>x.id===id);if(!p)return;cart[id]=Number(cart[id]||0)+Number(p.moq||1);save();renderProducts();alert("已加入订货单。数量按起订量 "+(p.moq||1)+" 双增加。")}
+function updateCartBadge(){$("navCount").textContent=countPairs();$("cartCount").textContent=countPairs()+" 双"}
+function renderCart(){
+ const ids=Object.keys(cart).filter(id=>cart[id]>0&&products.some(p=>p.id==id));
+ $("cartItems").innerHTML=ids.length?ids.map(id=>{const p=products.find(x=>x.id==id),q=Number(cart[id]);return `<div class="cartrow"><div><div class="cartname">${esc(p.name)}</div><div class="cartdetail">${esc(p.sku)} · ${money(p.price)}/双 · MOQ ${p.moq||1}</div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${q} 双</span><button onclick="changeQty(${p.id},1)">＋</button><button class="smallbtn" style="padding:4px 8px;font-size:11px" onclick="removeItem(${p.id})">删除</button></div></div><b>${money(q*p.price)}</b></div>`}).join(""):'<div class="empty">订货单还是空的。先去选几款鞋吧。<br>Order list is empty.</div>';
+ const total=ids.reduce((sum,id)=>sum+Number(cart[id])*Number(products.find(p=>p.id==id).price),0);$("total").textContent=money(total);updateCartBadge();
+}
+function changeQty(id,dir){const p=products.find(x=>x.id===id);if(!p)return;let next=Number(cart[id]||0)+dir*Number(p.moq||1);if(next<Number(p.moq||1))delete cart[id];else cart[id]=next;save();renderCart();renderProducts()}
+function removeItem(id){delete cart[id];save();renderCart();renderProducts()}
+function showView(view){currentView=view;["catalogView","cartView","adminView","ordersView"].forEach(v=>$(v).classList.toggle("hidden",v!==view));document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(view==="cartView")renderCart();if(view==="ordersView")renderOrders();if(view==="adminView")renderAdmin();window.scrollTo(0,0)}
+document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>showView(b.dataset.view));
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{category=b.dataset.cat;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));renderProducts()});
+$("search").addEventListener("input",renderProducts);
+$("manageBtn").onclick=()=>showView("adminView");
+function orderText(o){return `卡轩童鞋批发订货单 / KAXUAN WHOLESALE ORDER\n订单号: ${o.id}\n客户: ${o.buyer}\n国家: ${o.country}\n联系方式: ${o.contact}\n商品:\n${o.items.map(i=>`- ${i.sku} ${i.name} × ${i.qty}双 × ${money(i.price)} = ${money(i.qty*i.price)}`).join("\n")}\n总双数: ${o.pairs}\n商品金额(参考): ${money(o.total)}\n备注: ${o.notes||"无"}\n说明: 库存、最终价格、运费和付款方式待卖家确认。`}
+$("makeOrder").onclick=()=>{
+ const buyer=$("buyer").value.trim(),country=$("country").value.trim(),contact=$("contact").value.trim();
+ if(!buyer||!country||!contact){alert("请填写姓名/公司、国家和联系方式。");return}
+ const items=Object.keys(cart).filter(id=>cart[id]>0).map(id=>{const p=products.find(x=>x.id==id);return p?{sku:p.sku,name:p.name,qty:Number(cart[id]),price:Number(p.price)}:null}).filter(Boolean);
+ if(!items.length){alert("请先加入至少一款商品。");return}
+ const o={id:"KX"+Date.now().toString().slice(-8),date:new Date().toLocaleString(),buyer,country,contact,notes:$("notes").value.trim(),items,pairs:items.reduce((s,i)=>s+i.qty,0),total:items.reduce((s,i)=>s+i.qty*i.price,0),status:"待确认"};
+ orders.unshift(o);save();$("orderResult").classList.remove("hidden");$("orderResult").innerHTML=`<div class="notice" style="margin-top:12px"><b>订货单已在本机生成：${esc(o.id)}</b><br>请复制订单文字并通过 WhatsApp 或其他方式发给你自己/业务人员确认。</div><button class="primary" onclick="copySpecificOrder('${o.id}')">复制这张订货单</button><button class="secondary" onclick="showView('ordersView')">查看订单记录</button>`;renderOrders()
+};
+function copySpecificOrder(id){const o=orders.find(x=>x.id===id);if(o)copyText(orderText(o))}
+$("copyOrder").onclick=()=>{const items=Object.keys(cart).filter(id=>cart[id]>0).map(id=>{const p=products.find(x=>x.id==id);return p?{sku:p.sku,name:p.name,qty:Number(cart[id]),price:Number(p.price)}:null}).filter(Boolean);if(!items.length){alert("订货单为空");return}copyText(`卡轩童鞋批发订货单 / KAXUAN ORDER\n客户: ${$("buyer").value||"待填写"}\n国家: ${$("country").value||"待填写"}\n联系方式: ${$("contact").value||"待填写"}\n${items.map(i=>`${i.sku} ${i.name} × ${i.qty}双 = ${money(i.qty*i.price)}`).join("\n")}\n总双数: ${items.reduce((s,i)=>s+i.qty,0)}\n参考金额: ${money(items.reduce((s,i)=>s+i.qty*i.price,0))}\n备注: ${$("notes").value||"无"}\n库存、最终价格及运费待确认。`)}
+function copyText(t){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>alert("订货单文字已复制")).catch(()=>fallbackCopy(t))}else fallbackCopy(t)}
+function fallbackCopy(t){const ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");alert("订货单文字已复制")}catch(e){prompt("请手动复制以下内容",t)}ta.remove()}
+function clearForm(){$("editId").value="";$("sku").value="";$("pname").value="";$("pcat").value="运动鞋";$("price").value="18.5";$("stock").value="100";$("moq").value="100";$("sizes").value="26-37";$("imageUrl").value="";$("formTitle").textContent="添加新款 / Add product"}
+$("saveProduct").onclick=()=>{
+ const sku=$("sku").value.trim(),name=$("pname").value.trim();if(!sku||!name){alert("请填写款号和商品名称");return}
+ const editId=$("editId").value;const existing=editId?products.find(p=>p.id==editId):null;
+ const p={id:existing?existing.id:Math.max(0,...products.map(x=>Number(x.id)||0))+1,sku,name,cat:$("pcat").value,price:Math.max(0,Number($("price").value)||0),stock:Math.max(0,Number($("stock").value)||0),moq:Math.max(1,Number($("moq").value)||1),sizes:$("sizes").value.trim(),imageUrl:$("imageUrl").value.trim(),emoji:existing?.emoji||"👟",tone:existing?.tone||""};
+ if(existing)products=products.map(x=>x.id===existing.id?p:x);else products.unshift(p);save();clearForm();renderAdmin();renderProducts();alert("商品已保存到当前手机浏览器")
+};
+$("cancelEdit").onclick=clearForm;
+function editProduct(id){const p=products.find(x=>x.id===id);if(!p)return;$("editId").value=p.id;$("sku").value=p.sku;$("pname").value=p.name;$("pcat").value=p.cat;$("price").value=p.price;$("stock").value=p.stock;$("moq").value=p.moq;$("sizes").value=p.sizes||"26-37";$("imageUrl").value=p.imageUrl||"";$("formTitle").textContent="编辑商品 / Edit product";window.scrollTo(0,0)}
+function deleteProduct(id){if(!confirm("确定删除这款商品？"))return;products=products.filter(p=>p.id!==id);delete cart[id];save();renderAdmin();renderProducts()}
+function renderAdmin(){$("adminProducts").innerHTML=products.map(p=>`<div class="cartrow"><div><div class="cartname">${esc(p.sku)} · ${esc(p.name)}</div><div class="cartdetail">${money(p.price)} / 双 · 库存 ${p.stock} · MOQ ${p.moq}</div></div><div style="display:flex;gap:6px;align-items:center"><button class="smallbtn" onclick="editProduct(${p.id})">编辑</button><button class="smallbtn danger" onclick="deleteProduct(${p.id})">删除</button></div></div>`).join("")||'<p class="hint">还没有商品</p>'}
+function renderOrders(){$("orderCount").textContent=orders.length+" 单";$("ordersList").innerHTML=orders.map(o=>`<div class="panel"><div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(o.id)}</b><span class="tag" style="color:#785522;border-color:#ead7a5">${esc(o.status)}</span></div><p class="hint">${esc(o.date||"")} · ${esc(o.buyer)} · ${esc(o.country)}<br>${esc(o.contact)}<br>${o.items.map(i=>esc(i.sku)+" × "+i.qty+"双").join("；")}</p><div class="total"><span>${o.pairs} 双</span><strong>${money(o.total)}</strong></div><button class="secondary" onclick="copySpecificOrder('${o.id}')">复制订单文字</button><button class="secondary" onclick="changeStatus('${o.id}')">更新状态</button><button class="secondary danger" onclick="deleteOrder('${o.id}')">删除记录</button></div>`).join("")||'<div class="panel empty">还没有订单记录。</div>'}
+function changeStatus(id){const o=orders.find(x=>x.id===id);if(!o)return;const options=["待确认","待付款","已付款","打包中","已发货","已取消"];const next=prompt("输入新状态：\n"+options.join(" / "),o.status);if(next&&options.includes(next)){o.status=next;save();renderOrders()}}
+function deleteOrder(id){if(confirm("确定删除该订单记录？")){orders=orders.filter(o=>o.id!==id);save();renderOrders()}}
+$("exportData").onclick=()=>{const blob=new Blob([JSON.stringify({products,cart,orders},null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="kaxuan-backup.json";a.click();URL.revokeObjectURL(url)};
+$("importFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!Array.isArray(d.products)||!Array.isArray(d.orders))throw Error();if(confirm("导入将覆盖当前商品、购物车和订单。继续？")){products=d.products;cart=d.cart||{};orders=d.orders;save();renderProducts();renderAdmin();renderOrders();alert("导入完成")}}catch(err){alert("文件格式不正确或无法读取")};e.target.value=""};
+$("resetDemo").onclick=()=>{if(confirm("确定恢复演示商品？当前商品会被替换，订单记录不会删除。")){products=JSON.parse(JSON.stringify(demoProducts));save();clearForm();renderAdmin();renderProducts()}};
+renderProducts();renderCart();
+</script>
+</body>
+</html>
